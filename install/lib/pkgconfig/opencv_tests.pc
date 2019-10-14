@@ -1,0 +1,8 @@
+prefix=/home/ihack2/ros_wrapper_dev/install
+
+Name: opencv_tests
+Description: Description of opencv_tests
+Version: 1.13.0
+Cflags: 
+Libs: -L/home/ihack2/ros_wrapper_dev/install/lib 
+Requires: 

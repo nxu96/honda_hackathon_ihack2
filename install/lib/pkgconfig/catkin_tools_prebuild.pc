@@ -1,0 +1,8 @@
+prefix=/home/ihack2/ros_wrapper_dev/install
+
+Name: catkin_tools_prebuild
+Description: Description of catkin_tools_prebuild
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/ihack2/ros_wrapper_dev/install/lib 
+Requires: 

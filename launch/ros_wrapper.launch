@@ -1,0 +1,23 @@
+<launch>
+  <rosparam>
+    use_sim_time: true
+    run_number: 2
+    <!--        Side Car        Back Car        -->
+    <!-- Run 1: team1_run1.bag  team1_run1a.bag -->
+    <!-- Run 2: team1_run2.bag  team1_run2a.bag -->
+    <!-- Run 3:                 team1_run2b.bag -->
+  </rosparam>
+  <node pkg="rosbag" type="play" name="rosbag_side_car" required="true" args="--clock --bags
+    /home/markov/DataCollection_1004/team1_run2.bag
+    /home/markov/DataCollection_1004/team1_run2a.bag
+    /home/markov/DataCollection_1004/team1_run2b.bag
+    " output="log">
+    <remap from="/rear_usb_cam/image_raw" to="/side_car/front_usb_cam/image_raw"/>
+  </node>
+  <node name="utm_convert" pkg="gps_common" type="utm_odometry_node" respawn="false" required="true" output="screen" cwd="ROS_HOME">
+    <remap from="fix" to="/vehicle/gps/fix"/>
+    <remap from="/odom" to="/side_car/odom"/>
+  </node>
+  <!-- <node name="ros_wrapper" pkg="ros_wrapper" type="ros_wrapper.py" respawn="false" required="true" output="screen">
+  </node> -->
+</launch>

@@ -1,0 +1,8 @@
+prefix=/home/ihack2/ros_wrapper_dev/install
+
+Name: ros_wrapper
+Description: Description of ros_wrapper
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/ihack2/ros_wrapper_dev/install/lib 
+Requires: 
